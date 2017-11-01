@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTDSQL Map Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 配置环境，制定数据库连接信息 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url"
+                          value="jdbc:mysql://192.168.1.3:3306/bg20161206?serverTimezone=UTC"/>
+                <property name="username" value="bg20161206"/>
+                <property name="password" value="bg20161206"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!-- <mapper resource="com/test/dao/UserMapper.xml"/>-->
+        <!-- Mapper扫描包，必须同目录同名称下-->
+        <mapper class="dao.MybatisDao"/>
+    </mappers>
+
+</configuration>
